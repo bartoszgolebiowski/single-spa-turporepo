@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "single-spa-turborepo",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test --concurrency=1"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

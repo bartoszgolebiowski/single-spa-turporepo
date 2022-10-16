@@ -1,8 +1,9 @@
 {
   "extends": "tsconfig/app.json",
   "compilerOptions": {
-    "rootDir": "../../packages/ui/src",
-    "outDir": "../../packages/ui/dist"
+    "rootDir": "../../packages/search/src",
+    "outDir": "../../packages/search/dist",
+    "types": ["jest", "node"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
