@@ -1,15 +1,15 @@
-# Turborepo starter
+# single-spa-turborepo
 
-This is an official pnpm starter turborepo.
+This is an unofficial pnpm + turborepo single-spa monorepo starter.
 
 ## What's inside?
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+This repo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
+- `shell`: the [single-spa root-config](https://single-spa.js.org/docs/configuration/) that serves the index.html
+- `home`: a single-spa React application
 - `ui`: a stub React component library shared by both `web` and `docs` applications
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
@@ -26,21 +26,11 @@ This turborepo has some additional tools already setup for you:
 
 ### Build
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
-```
+To build all apps and packages, run `pnpm run build`.
 
 ### Develop
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run dev
-```
+To develop all apps and packages, run `pnpm run dev`.
 
 ### Remote Caching
 
@@ -60,6 +50,16 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```
 pnpm dlx turbo link
 ```
+
+## Additional Notes
+
+### Why Turborepo?
+
+Turborepo is a great tool for monorepos. It lacks package publishing workflows but that is not necessary for a microfrontends architecture, as all of the code is managed locally.
+
+### What about deployment?
+
+Turborepo can [filter workspaces based on the commit content](https://turborepo.org/docs/core-concepts/filtering#check-a-range-of-commits) to build and deploy only the modified microfrontends. Deployment from there can be as simple as uploading the static files to AWS S3 or any other CDN!
 
 ## Useful Links
 
